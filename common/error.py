@@ -5,3 +5,4 @@
 # 错误处理
 
 VCODE_ERROR = 1000
+LOGIN_ERROR = 1001

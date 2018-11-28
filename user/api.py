@@ -15,7 +15,7 @@ def get_verify_code(request):
     '''
     phonenum = request.POST.get('phonenum')
     send_verify_code(phonenum)
-    return render_json(None, 0)
+    return render_json(None)
 
 
 
@@ -30,7 +30,7 @@ def login(request):
     if check_vcode(phonenum, vcode):
         user, _ = User.objects.get_or_create(phonenum=phonenum)
         request.session['uid'] = str(user.id)
-        return render_json(user.to_dict(), 0)
+        return render_json(user.to_dict())
     else:
         return render_json(None, VCODE_ERROR)
 
@@ -41,8 +41,8 @@ def get_profile(request):
     :param request:
     :return:
     '''
-
-    pass
+    user = request.user
+    return render_json(user.profile.to_dict())
 
 
 def modify_profile(request):
