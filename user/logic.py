@@ -22,7 +22,7 @@ def gen_verify_code(length=6):
 @call_by_worker
 def send_verify_code(phonenum):
     '''
-    发送验证码短信
+    发送验证码短信，异步
     :param phonenum: 手机号, str
     :return: json
     '''
@@ -37,3 +37,15 @@ def send_verify_code(phonenum):
 
     response = requests.post(url=config.HY_SMS_URL, data=data)
     return response.json()
+
+
+def check_vcode(phonenum, vcode):
+    '''
+    检查验证码是否正确
+    :param phonenum: 手机号
+    :param vcode: 用户提交的验证码
+    :return: Bool
+    '''
+    key = 'VerifyCode-%s' % phonenum
+    saved_vcode = cache.get(key)
+    return saved_vcode == vcode

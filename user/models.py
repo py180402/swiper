@@ -3,8 +3,10 @@ import datetime
 
 from django.utils.functional import cached_property
 
+from lib.orm import ModelMixin
 
-class User(models.Model):
+
+class User(models.Model, ModelMixin):
     '''
     用户数据模型
     '''
@@ -17,7 +19,7 @@ class User(models.Model):
     nickname = models.CharField(max_length=32, unique=True)
     phonenum = models.CharField(max_length=32, unique=True)
 
-    sex = models.CharField(max_length=8,default='男', choices=SEX)
+    sex = models.CharField(max_length=8, default='男', choices=SEX)
     birth_year = models.IntegerField(default=2000)
     birth_month = models.IntegerField(default=1)
     birth_day = models.IntegerField(default=1)
@@ -43,8 +45,23 @@ class User(models.Model):
             self._profile, _ = Profile.objects.get_or_create(id=self.id)
         return self._profile
 
+    def to_dict(self):
+        '''
+        将对象转为字典
+        :return: dict
+        '''
+        return {
+            'uid': self.id,
+            'nickname': self.nickname,
+            'phonenum': self.phonenum,
+            'sex': self.sex,
+            'avatar': self.avatar,
+            'location': self.location,
+            'age': self.age,
+        }
 
-class Profile(models.Model):
+
+class Profile(models.Model, ModelMixin):
     '''
     用户配置项
     '''
