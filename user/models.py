@@ -56,7 +56,7 @@ class Profile(models.Model):
     location = models.CharField(max_length=32, verbose_name='目标城市')
 
     min_distance = models.IntegerField(default=1, verbose_name='最小查找范围')
-    max_distance = models.IntegerField(default=10, verbose_name='最大交友年龄')
+    max_distance = models.IntegerField(default=10, verbose_name='最大查找范围')
 
     min_dating_age = models.IntegerField(default=18, verbose_name='最小交友年龄')
     max_dating_age = models.IntegerField(default=45, verbose_name='最大交友年龄')

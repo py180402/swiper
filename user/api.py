@@ -1,3 +1,7 @@
+import json
+
+from django.http import HttpResponse
+from lib.http import render_json
 from user.models import *
 from .logic import send_verify_code
 
@@ -10,6 +14,7 @@ def get_verify_code(request):
     '''
     phonenum = request.GET.get('phonenum')
     send_verify_code(phonenum)
+    return render_json(None, 0)
 
 
 
