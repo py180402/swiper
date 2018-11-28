@@ -5,6 +5,7 @@ from lib.http import render_json
 from user.models import *
 from .logic import send_verify_code, check_vcode
 from common.error import *
+from .forms import ProfileForm
 
 
 def get_verify_code(request):
@@ -51,7 +52,14 @@ def modify_profile(request):
     :param request:
     :return:
     '''
-    pass
+    form = ProfileForm(request.POST)
+    if form.is_valid():
+        user = request.user
+        user.profile.__dict__.update(form.cleaned_data)
+        user.profile.save()
+        return render_json(None)
+    else:
+        return render_json(form.errors, PROFILE_ERROR)
 
 
 def upload_avatar(request):
