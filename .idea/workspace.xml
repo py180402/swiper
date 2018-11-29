@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea948360-ecc0-4712-b3f7-e7e53c7aa127" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/script/init.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/social/logic.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/social/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/error.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/error.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swiper/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/swiper/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swiper/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/swiper/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swiper/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/swiper/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/logic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/social/api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social/logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/social/logic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/social/models.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +86,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="3" />
-          <entry key="py" value="7802" />
+          <entry key="py" value="8514" />
           <entry key="py@swiper" value="22" />
         </counts>
       </usages-collector>
@@ -102,46 +94,34 @@
         <counts>
           <entry key="CommandLine" value="22" />
           <entry key="PLAIN_TEXT" value="3" />
-          <entry key="Python" value="7802" />
+          <entry key="Python" value="8514" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/social/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+            <state relative-caret-position="215">
+              <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
               <folding>
-                <marker date="1543473573013" expanded="true" signature="58:63" ph="..." />
-                <marker date="1543473573013" expanded="true" signature="464:469" ph="..." />
+                <marker date="1543481088931" expanded="true" signature="58:63" ph="..." />
+                <marker date="1543481088931" expanded="true" signature="1028:1033" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/script/init.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
-              <folding>
-                <element signature="e#23#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/social/api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="16" column="47" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
+            <state relative-caret-position="386">
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
-                <marker date="1543478743136" expanded="true" signature="110:115" ph="..." />
+                <marker date="1543479697052" expanded="true" signature="110:115" ph="..." />
               </folding>
             </state>
           </provider>
@@ -150,11 +130,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/social/logic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="424">
+              <caret line="41" column="39" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
               <folding>
                 <element signature="e#103#118#0" expanded="true" />
-                <marker date="1543477784414" expanded="true" signature="173:178" ph="..." />
+                <marker date="1543481088810" expanded="true" signature="201:206" ph="..." />
+                <marker date="1543481088810" expanded="true" signature="690:695" ph="..." />
+                <marker date="1543481088810" expanded="true" signature="928:933" ph="..." />
               </folding>
             </state>
           </provider>
@@ -194,12 +176,12 @@
         <option value="$PROJECT_DIR$/user/logic.py" />
         <option value="$PROJECT_DIR$/user/api.py" />
         <option value="$PROJECT_DIR$/swiper/config.py" />
-        <option value="$PROJECT_DIR$/social/models.py" />
         <option value="$PROJECT_DIR$/swiper/urls.py" />
         <option value="$PROJECT_DIR$/swiper/settings.py" />
         <option value="$PROJECT_DIR$/script/init.py" />
-        <option value="$PROJECT_DIR$/social/logic.py" />
         <option value="$PROJECT_DIR$/social/api.py" />
+        <option value="$PROJECT_DIR$/social/logic.py" />
+        <option value="$PROJECT_DIR$/social/models.py" />
       </list>
     </option>
   </component>
@@ -210,8 +192,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="947" />
-    <option name="width" value="980" />
+    <option name="x" value="952" />
+    <option name="width" value="977" />
     <option name="height" value="1038" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -319,10 +301,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="758" y="0" width="784" height="830" extended-state="0" />
+    <frame x="762" y="0" width="781" height="830" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19146006" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1922545" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -563,35 +545,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/social/models.py">
+    <entry file="file://$PROJECT_DIR$/social/api.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+        <state relative-caret-position="386">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
           <folding>
-            <marker date="1543473573013" expanded="true" signature="58:63" ph="..." />
-            <marker date="1543473573013" expanded="true" signature="464:469" ph="..." />
+            <element signature="e#0#32#0" expanded="true" />
+            <marker date="1543479697052" expanded="true" signature="110:115" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/social/logic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="424">
+          <caret line="41" column="39" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
           <folding>
             <element signature="e#103#118#0" expanded="true" />
-            <marker date="1543477784414" expanded="true" signature="173:178" ph="..." />
+            <marker date="1543481088810" expanded="true" signature="201:206" ph="..." />
+            <marker date="1543481088810" expanded="true" signature="690:695" ph="..." />
+            <marker date="1543481088810" expanded="true" signature="928:933" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/social/api.py">
+    <entry file="file://$PROJECT_DIR$/social/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="47" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
+        <state relative-caret-position="215">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
-            <marker date="1543478743136" expanded="true" signature="110:115" ph="..." />
+            <marker date="1543481088931" expanded="true" signature="58:63" ph="..." />
+            <marker date="1543481088931" expanded="true" signature="1028:1033" ph="..." />
           </folding>
         </state>
       </provider>

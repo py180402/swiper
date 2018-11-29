@@ -12,7 +12,7 @@ def users(request):
 
     page = int(request.POST.get('page', 1))
     limit = int(request.POST.get('limit', 5))
-    users = get_rcmd_users(request.user)[(page-1)*limit, page*limit]
+    users = get_rcmd_users(request.user)[(page - 1) * limit, page * limit]
 
     result = [user.to_dict() for user in users]
 
@@ -25,15 +25,18 @@ def like(request):
     :param request:
     :return:
     '''
-    pass
+    sid = request.POST.get('sid')
+
+
 
 def superlike(request):
     '''
-    关注
+    超级喜欢
     :param request:
     :return:
     '''
     pass
+
 
 def dislike(request):
     '''
@@ -42,6 +45,7 @@ def dislike(request):
     :return:
     '''
     pass
+
 
 def rewind(request):
     '''

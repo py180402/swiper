@@ -6,6 +6,7 @@
 import datetime
 
 from user.models import *
+from social.models import *
 
 
 def get_rcmd_users(user):
@@ -26,3 +27,26 @@ def get_rcmd_users(user):
     users = User.objects.filter(sex=dating_sex, location=location, birth_year__range=(min_year, max_year))
 
     return users
+
+
+def like(user, sid):
+    '''
+    喜欢一个用户
+    :param user:
+    :param sid:
+    :return:
+    '''
+    Swiped.mark(user.id, sid, 'like')
+    # 检查被滑动用户是否喜欢过自己
+    if Swiped.is_liked(sid, user.id):
+        Friend.be_friends(user.id, sid)
+
+
+def superlike(user, sid):
+    '''
+    超级喜欢一个用户
+    :param user:
+    :param sid:
+    :return:
+    '''
+    Swiped.mark(user.id, sid, 'superlike')
