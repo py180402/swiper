@@ -3,11 +3,16 @@
 # @Author  : zhyipeng
 # @File    : logic.py
 # 一些逻辑处理
+import os
+
 import requests
 import random
+from urllib.parse import urljoin
+from django.core.cache import cache
+from django.conf import settings
+from lib.qncloud import async_upload_to_qiniu
 from swiper import config
 from worker import call_by_worker
-from django.core.cache import cache
 
 
 def gen_verify_code(length=6):
@@ -49,3 +54,21 @@ def check_vcode(phonenum, vcode):
     key = 'VerifyCode-%s' % phonenum
     saved_vcode = cache.get(key)
     return saved_vcode == vcode
+
+
+def save_upload_file(upload_file, user):
+    '''
+    保存用户上传的文件到本地、七牛云和数据库
+    :param file:
+    :return:
+    '''
+    filename = 'Avatar-%s%s' % (user.id, os.path.splitext(upload_file.name)[1])
+    filepath = os.path.join(settings.BASE_DIR, settings.MEDIA_ROOT, filename)
+    with open(filepath, 'wb') as f:
+        for chunk in upload_file.chunks():
+            f.write(chunk)
+
+    ret, info = async_upload_to_qiniu(filepath, filename)
+    url = urljoin(config.QN_BASE_URL, filename)
+    user.avatar = url
+    user.save()

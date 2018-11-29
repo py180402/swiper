@@ -1,9 +1,9 @@
 import json
+import os
 
-from django.http import HttpResponse
 from lib.http import render_json
 from user.models import *
-from .logic import send_verify_code, check_vcode
+from .logic import send_verify_code, check_vcode, save_upload_file
 from common.error import *
 from .forms import ProfileForm
 
@@ -17,7 +17,6 @@ def get_verify_code(request):
     phonenum = request.POST.get('phonenum')
     send_verify_code(phonenum)
     return render_json(None)
-
 
 
 def login(request):
@@ -68,4 +67,12 @@ def upload_avatar(request):
     :param request:
     :return:
     '''
-    pass
+    # 接受用户上传的头像
+    # 定义头像名称
+    file = request.FILES.get('avatar')
+    if file is None:
+        return render_json(None, FILE_NOT_FOUND)
+    # 保存到本地且异步上传到七牛
+    # 将url保存入数据库
+    save_upload_file(file, request.user)
+    return render_json(None)
