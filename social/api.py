@@ -1,6 +1,7 @@
 from lib.http import render_json
 from .models import *
 from social import logic
+from vip.logic import perm_require
 
 
 def users(request):
@@ -25,18 +26,19 @@ def like(request):
     :param request:
     :return:
     '''
-    sid = request.POST.get('sid')
+    sid = int(request.POST.get('sid'))
     is_matched = logic.like(request.user, sid)
     return render_json({'is_matched': is_matched})
 
 
+@perm_require('superlike')
 def superlike(request):
     '''
     超级喜欢
     :param request:
     :return:
     '''
-    sid = request.POST.get('sid')
+    sid = int(request.POST.get('sid'))
     is_matched = logic.superlike(request.user, sid)
     return render_json({'is_matched': is_matched})
 
@@ -47,11 +49,12 @@ def dislike(request):
     :param request:
     :return:
     '''
-    sid = request.POST.get('sid')
+    sid = int(request.POST.get('sid'))
     logic.dislike(request.user, sid)
     return render_json(None)
 
 
+@perm_require('rewind')
 def rewind(request):
     '''
     反悔

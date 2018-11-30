@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from user import api as user_api
 from social import api as social_api
+from vip import api as vip_api
 
 urlpatterns = [
     url(r'^api/user/verify_code$', user_api.get_verify_code),
