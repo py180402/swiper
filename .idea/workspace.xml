@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea948360-ecc0-4712-b3f7-e7e53c7aa127" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/user/migrations/0003_user_vip_id.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vip/logic.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vip/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vip/migrations/0002_auto_20181130_1144.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vip/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/error.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/error.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script/init.py" beforeDir="false" afterPath="$PROJECT_DIR$/script/init.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/social/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/social/api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swiper/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/swiper/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swiper/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/swiper/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vip/logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/vip/logic.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +77,8 @@
         <counts>
           <entry key="gitignore" value="1" />
           <entry key="jpg" value="1" />
-          <entry key="py" value="97" />
+          <entry key="log" value="1" />
+          <entry key="py" value="100" />
           <entry key="pyi" value="2" />
           <entry key="sql" value="1" />
           <entry key="user_user" value="3" />
@@ -95,8 +88,8 @@
         <counts>
           <entry key="Database Element" value="3" />
           <entry key="Image" value="1" />
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="97" />
+          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="Python" value="100" />
           <entry key="PythonStub" value="2" />
           <entry key="Scratch" value="1" />
         </counts>
@@ -104,7 +97,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="10" />
-          <entry key="py" value="11852" />
+          <entry key="py" value="12099" />
           <entry key="py@swiper" value="43" />
         </counts>
       </usages-collector>
@@ -112,7 +105,7 @@
         <counts>
           <entry key="CommandLine" value="42" />
           <entry key="PLAIN_TEXT" value="11" />
-          <entry key="Python" value="11852" />
+          <entry key="Python" value="12099" />
         </counts>
       </usages-collector>
     </session>
@@ -122,26 +115,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/social/api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="463">
-              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+            <state relative-caret-position="59">
+              <caret line="38" column="7" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
               <folding>
-                <element signature="e#0#32#0" expanded="true" />
-                <marker date="1543558896106" expanded="true" signature="136:141" ph="..." />
-                <marker date="1543558896106" expanded="true" signature="1328:1333" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vip/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="34" column="7" lean-forward="true" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
-              <folding>
-                <marker date="1543549932624" expanded="true" signature="55:60" ph="..." />
-                <marker date="1543549932624" expanded="true" signature="225:470" ph="..." />
-                <marker date="1543549932624" expanded="true" signature="844:849" ph="..." />
+                <element signature="e#0#14#0" expanded="true" />
+                <marker date="1543563300997" expanded="true" signature="184:189" ph="..." />
+                <marker date="1543563300997" expanded="true" signature="1522:1527" ph="..." />
               </folding>
             </state>
           </provider>
@@ -150,12 +129,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vip/logic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+            <state relative-caret-position="361">
+              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
               <folding>
-                <marker date="1543559333723" expanded="true" signature="231:236" ph="..." />
-                <marker date="1543559333723" expanded="true" signature="325:334" ph="..." />
-                <marker date="1543559333723" expanded="true" signature="352:580" ph="..." />
+                <element signature="e#107#121#0" expanded="true" />
+                <marker date="1543563481736" expanded="true" signature="279:284" ph="..." />
+                <marker date="1543563481736" expanded="true" signature="373:382" ph="..." />
+                <marker date="1543563481736" expanded="true" signature="400:694" ph="..." />
               </folding>
             </state>
           </provider>
@@ -195,13 +175,13 @@
         <option value="$PROJECT_DIR$/user/forms.py" />
         <option value="$PROJECT_DIR$/social/logic.py" />
         <option value="$PROJECT_DIR$/social/models.py" />
-        <option value="$PROJECT_DIR$/swiper/settings.py" />
         <option value="$PROJECT_DIR$/swiper/urls.py" />
         <option value="$PROJECT_DIR$/script/init.py" />
         <option value="$PROJECT_DIR$/vip/models.py" />
-        <option value="$PROJECT_DIR$/social/api.py" />
         <option value="$PROJECT_DIR$/user/models.py" />
         <option value="$PROJECT_DIR$/common/error.py" />
+        <option value="$PROJECT_DIR$/swiper/settings.py" />
+        <option value="$PROJECT_DIR$/social/api.py" />
         <option value="$PROJECT_DIR$/vip/logic.py" />
       </list>
     </option>
@@ -235,17 +215,12 @@
             <path>
               <item name="swiper" type="b2602c69:ProjectViewProjectNode" />
               <item name="swiper" type="462c0819:PsiDirectoryNode" />
-              <item name="script" type="462c0819:PsiDirectoryNode" />
+              <item name="logs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="swiper" type="b2602c69:ProjectViewProjectNode" />
               <item name="swiper" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="swiper" type="b2602c69:ProjectViewProjectNode" />
               <item name="swiper" type="462c0819:PsiDirectoryNode" />
-              <item name="vip" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -256,7 +231,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="sqlite" />
-    <property name="SearchEverywhereHistoryKey" value="error&#9;FILE&#9;file://F:/myproject/DjangoPro/swiper/swiper/common/error.py&#10;user&#9;null&#9;null&#10;err&#9;FILE&#9;file://F:/myproject/DjangoPro/swiper/swiper/common/error.py&#10;config&#9;FILE&#9;file://F:/myproject/DjangoPro/swiper/swiper/swiper/config.py" />
+    <property name="SearchEverywhereHistoryKey" value="api&#9;FILE&#9;file://F:/myproject/DjangoPro/swiper/swiper/social/api.py&#10;error&#9;FILE&#9;file://F:/myproject/DjangoPro/swiper/swiper/common/error.py&#10;user&#9;null&#9;null&#10;err&#9;FILE&#9;file://F:/myproject/DjangoPro/swiper/swiper/common/error.py&#10;config&#9;FILE&#9;file://F:/myproject/DjangoPro/swiper/swiper/swiper/config.py" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../FlaskPro/swiper" />
@@ -598,13 +573,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="258">
           <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/swiper/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
+          <folding>
+            <element signature="e#640#672#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -627,18 +598,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vip/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="34" column="7" lean-forward="true" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
-          <folding>
-            <marker date="1543549932624" expanded="true" signature="55:60" ph="..." />
-            <marker date="1543549932624" expanded="true" signature="225:470" ph="..." />
-            <marker date="1543549932624" expanded="true" signature="844:849" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/social/logic.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -650,18 +609,6 @@
             <marker date="1543544229473" expanded="true" signature="1051:1056" ph="..." />
             <marker date="1543544229473" expanded="true" signature="1345:1350" ph="..." />
             <marker date="1543544229473" expanded="true" signature="1485:1490" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/social/api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-            <marker date="1543558896106" expanded="true" signature="136:141" ph="..." />
-            <marker date="1543558896106" expanded="true" signature="1328:1333" ph="..." />
           </folding>
         </state>
       </provider>
@@ -684,14 +631,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vip/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="34" column="7" lean-forward="true" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
+          <folding>
+            <marker date="1543549932624" expanded="true" signature="55:60" ph="..." />
+            <marker date="1543549932624" expanded="true" signature="225:470" ph="..." />
+            <marker date="1543549932624" expanded="true" signature="844:849" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swiper/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="165" column="23" selection-start-line="165" selection-start-column="23" selection-end-line="165" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/social/api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="38" column="7" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <marker date="1543563300997" expanded="true" signature="184:189" ph="..." />
+            <marker date="1543563300997" expanded="true" signature="1522:1527" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/error.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="63" lean-forward="true" selection-start-column="63" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vip/logic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+        <state relative-caret-position="361">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
           <folding>
-            <marker date="1543559333723" expanded="true" signature="231:236" ph="..." />
-            <marker date="1543559333723" expanded="true" signature="325:334" ph="..." />
-            <marker date="1543559333723" expanded="true" signature="352:580" ph="..." />
+            <element signature="e#107#121#0" expanded="true" />
+            <marker date="1543563481736" expanded="true" signature="279:284" ph="..." />
+            <marker date="1543563481736" expanded="true" signature="373:382" ph="..." />
+            <marker date="1543563481736" expanded="true" signature="400:694" ph="..." />
           </folding>
         </state>
       </provider>

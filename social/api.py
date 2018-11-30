@@ -1,7 +1,11 @@
+import logging
+
 from lib.http import render_json
 from .models import *
 from social import logic
 from vip.logic import perm_require
+
+log = logging.getLogger('inf')
 
 
 def users(request):
@@ -28,6 +32,7 @@ def like(request):
     '''
     sid = int(request.POST.get('sid'))
     is_matched = logic.like(request.user, sid)
+    log.info(f'{request.user.id} like {sid}')
     return render_json({'is_matched': is_matched})
 
 
@@ -40,6 +45,7 @@ def superlike(request):
     '''
     sid = int(request.POST.get('sid'))
     is_matched = logic.superlike(request.user, sid)
+    log.info(f'{request.user.id} superlike {sid}')
     return render_json({'is_matched': is_matched})
 
 
@@ -51,6 +57,7 @@ def dislike(request):
     '''
     sid = int(request.POST.get('sid'))
     logic.dislike(request.user, sid)
+    log.info(f'{request.user.id} dislike {sid}')
     return render_json(None)
 
 

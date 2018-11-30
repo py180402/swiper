@@ -130,3 +130,59 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = 'medias'
 
+# Logging
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+    'formatters': {
+        'simple': {
+            'format': '%(asctime)s %(module)s.%(funcName)s: %(message)s',
+            'datefmt': '%Y-%m-%d %H:%M:%S',
+        },
+        'verbose': {
+            'format': ('%(asctime)s %(levelname)s [%(process)d-%(threadName)s] '
+                       '%(module)s.%(funcName)s line %(lineno)d: %(message)s'),
+            'datefmt': '%Y-%m-%d %H:%M:%S',
+        }
+    },
+
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'level': 'DEBUG' if DEBUG else 'WARNING'
+        },
+        'info': {
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'filename': f'{BASE_DIR}/logs/info.log',
+            'when': 'D',  # 每天切割日志
+            'backupCount': 30,  # 日志保留 30 天
+            'formatter': 'simple', # 对应以上simple
+            'level': 'DEBUG'
+        },
+        'error': {
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'filename': f'{BASE_DIR}/logs/error.log',
+            'when': 'W0',  # 每周一切割日志
+            'backupCount': 4,  # 日志保留 4 周
+            'formatter': 'verbose',
+            'level': 'DEBUG'
+        }
+    },
+
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            # 'level': 'DEBUG' if DEBUG else 'INFO',
+        },
+        'inf': {
+            'handlers': ['info'],
+            'propagate': True,
+            'level': 'DEBUG' if DEBUG else 'INFO',
+        },
+        'err': {
+            'handlers': ['error'],
+            'propagate': True,
+            'level': 'DEBUG' if DEBUG else 'ERROR',
+        }
+    }
+}
