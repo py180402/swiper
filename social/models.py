@@ -1,4 +1,6 @@
 from django.db import models
+from django.db.models import Q
+from user.models import User
 
 
 class Swiped(models.Model):
@@ -26,7 +28,8 @@ class Swiped(models.Model):
         :return:
         '''
         if status in ['superlike', 'like', 'dislike']:
-            cls.objects.create(uid=uid, sid=sid, status=status)
+            defaults = {'status': status}
+            cls.objects.update_or_create(uid=uid, sid=sid, defaults=defaults)
 
     @classmethod
     def is_liked(cls, uid, sid):
@@ -54,4 +57,47 @@ class Friend(models.Model):
         :param sid: stranger_id
         :return:
         '''
-        cls.objects.create(uid1=uid1, uid2=uid2)
+        uid1, uid2 = sorted([uid1, uid2])
+        cls.objects.get_or_create(uid1=uid1, uid2=uid2)
+
+
+    @classmethod
+    def break_off(cls, uid1, uid2):
+        '''
+        断交
+        :param uid1:
+        :param uid2:
+        :return:
+        '''
+        uid1, uid2 = sorted([uid1, uid2])
+        try:
+            cls.objects.get(uid1=uid1, uid2=uid2).delete()
+        except cls.DoesNotExist:
+            pass
+
+
+    @classmethod
+    def is_friend(cls, uid1, uid2):
+        '''
+        查询是否是好友
+        :param uid1:
+        :param uid2:
+        :return: Bool
+        '''
+        condition = Q(uid1=uid1, uid2=uid2) | Q(uid1=uid2, uid2=uid1)
+        return cls.objects.filter(condition).exists()
+
+
+    @classmethod
+    def friends(cls, uid):
+        '''
+        获取好友列表
+        :param uid:
+        :return:
+        '''
+        condition = Q(uid1=uid) | Q(uid2=uid)
+        relations = cls.objects.filter(condition)
+        # friend_id_list = [rel.uid1 if rel.uid2==uid else rel.uid2 for rel in relations]
+        friend_id_list = [rel.uid1 + rel.uid2 - int(uid) for rel in relations]
+
+        return User.objects.filter(id__in=friend_id_list)

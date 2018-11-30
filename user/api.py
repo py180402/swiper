@@ -15,6 +15,7 @@ def get_verify_code(request):
     :return:
     '''
     phonenum = request.POST.get('phonenum')
+    print(phonenum)
     send_verify_code(phonenum)
     return render_json(None)
 

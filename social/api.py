@@ -1,6 +1,6 @@
 from lib.http import render_json
 from .models import *
-from .logic import get_rcmd_users
+from social import logic
 
 
 def users(request):
@@ -12,7 +12,7 @@ def users(request):
 
     page = int(request.POST.get('page', 1))
     limit = int(request.POST.get('limit', 5))
-    users = get_rcmd_users(request.user)[(page - 1) * limit, page * limit]
+    users = logic.get_rcmd_users(request.user)[(page - 1) * limit: page * limit]
 
     result = [user.to_dict() for user in users]
 
@@ -26,7 +26,8 @@ def like(request):
     :return:
     '''
     sid = request.POST.get('sid')
-
+    is_matched = logic.like(request.user, sid)
+    return render_json({'is_matched': is_matched})
 
 
 def superlike(request):
@@ -35,7 +36,9 @@ def superlike(request):
     :param request:
     :return:
     '''
-    pass
+    sid = request.POST.get('sid')
+    is_matched = logic.superlike(request.user, sid)
+    return render_json({'is_matched': is_matched})
 
 
 def dislike(request):
@@ -44,13 +47,28 @@ def dislike(request):
     :param request:
     :return:
     '''
-    pass
+    sid = request.POST.get('sid')
+    logic.dislike(request.user, sid)
+    return render_json(None)
 
 
 def rewind(request):
     '''
-    返回
+    反悔
     :param request:
     :return:
     '''
-    pass
+    sid = request.POST.get('sid')
+    logic.rewind(request.user, sid)
+    return render_json(None)
+
+
+def friends(request):
+    '''
+    获取好友列表
+    :param request:
+    :return:
+    '''
+    my_friends = Friend.friends(request.user.id)
+    friends_info = [f.to_dict() for f in my_friends]
+    return render_json({'friends': friends_info})

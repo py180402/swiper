@@ -10,7 +10,7 @@ import random
 from urllib.parse import urljoin
 from django.core.cache import cache
 from django.conf import settings
-from lib.qncloud import async_upload_to_qiniu
+# from lib.qncloud import async_upload_to_qiniu
 from swiper import config
 from worker import call_by_worker
 
@@ -34,7 +34,7 @@ def send_verify_code(phonenum):
     code = gen_verify_code()
     key = 'VerifyCode-%s' % phonenum
     # 存入缓存
-    cache.set(key, code, timeout=120)
+    cache.set(key, code, 120)
 
     data = config.HY_SMS_PARAMS.copy()
     data['content'] = data['content'] % code
@@ -42,6 +42,22 @@ def send_verify_code(phonenum):
 
     response = requests.post(url=config.HY_SMS_URL, data=data)
     return response.json()
+
+# @call_by_worker
+# def send_verify_code(phonenum):
+#     '''
+#     发送验证码短信，云之讯
+#     :param phonenum: 手机号
+#     :return:
+#     '''
+#     code = gen_verify_code()
+#     data = config.SMS_PARAMS.copy()
+#     data['param'] = code
+#     data['mobile'] = phonenum
+#
+#     response = requests.post(url=config.SMS_SERVER_URL, data=data)
+#     return response
+
 
 
 def check_vcode(phonenum, vcode):
@@ -53,6 +69,7 @@ def check_vcode(phonenum, vcode):
     '''
     key = 'VerifyCode-%s' % phonenum
     saved_vcode = cache.get(key)
+    print(vcode, saved_vcode)
     return saved_vcode == vcode
 
 
@@ -68,7 +85,7 @@ def save_upload_file(upload_file, user):
         for chunk in upload_file.chunks():
             f.write(chunk)
 
-    ret, info = async_upload_to_qiniu(filepath, filename)
+    # ret, info = async_upload_to_qiniu(filepath, filename)
     url = urljoin(config.QN_BASE_URL, filename)
     user.avatar = url
     user.save()

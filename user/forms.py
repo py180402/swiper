@@ -27,14 +27,15 @@ class ProfileForm(forms.ModelForm):
             'auto_play',
         ]
 
-    def clean_min_dating_age(self):
+    def clean_max_dating_age(self):
         '''
         数据清洗
         :return:
         '''
         cleaned_data = super().clean()
-        min_dating_age = cleaned_data['min_dating_age']
-        max_dating_age = cleaned_data['max_dating_age']
+        print(cleaned_data)
+        min_dating_age = cleaned_data.get('min_dating_age')
+        max_dating_age = cleaned_data.get('max_dating_age')
         if min_dating_age > max_dating_age:
             raise forms.ValidationError
 

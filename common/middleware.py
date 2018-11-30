@@ -11,8 +11,8 @@ class AuthMiddleware(MiddlewareMixin):
     用户登陆验证中间件
     '''
     WHITE_LIST = [
-        'api/user/verify',
-        'api/user/login',
+        '/api/user/verify_code',
+        '/api/user/login',
     ]
 
     def process_request(self, request):
