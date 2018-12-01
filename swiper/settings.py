@@ -85,11 +85,25 @@ WSGI_APPLICATION = 'swiper.wsgi.application'
 #         'PASSWORD': 'root',
 #     }
 # }
+
+# 分布式数据库
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    },
+    'db1': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db1.sqlite3'),
+    },
+    'db2': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db2.sqlite3'),
+    },
+    'db3': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db3.sqlite3'),
+    },
 }
 
 # Password validation
@@ -130,6 +144,25 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = 'medias'
 
+# 使用redis做缓存
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/4",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            "PICKLE_VERSION": -1,
+        }
+    }
+}
+
+# Email配置
+ADMINS = [
+    ('zyp', 'zhyipeng@outlook.com'),
+]
+EMAIL_SUBJECT_PREFIX = '[Swiper]'
+
+
 # Logging
 LOGGING = {
     'version': 1,
@@ -156,7 +189,7 @@ LOGGING = {
             'filename': f'{BASE_DIR}/logs/info.log',
             'when': 'D',  # 每天切割日志
             'backupCount': 30,  # 日志保留 30 天
-            'formatter': 'simple', # 对应以上simple
+            'formatter': 'simple',  # 对应以上simple
             'level': 'DEBUG'
         },
         'error': {

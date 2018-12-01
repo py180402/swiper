@@ -1,6 +1,4 @@
-import json
-import os
-
+from django.core.cache import cache
 from lib.http import render_json
 from user.models import *
 from .logic import send_verify_code, check_vcode, save_upload_file
@@ -43,7 +41,12 @@ def get_profile(request):
     :return:
     '''
     user = request.user
-    return render_json(user.profile.to_dict())
+    key = 'Profile-%d' % user.id
+    user_profile = cache.get(key)
+    if not user_profile:
+        user_profile = user.profile.to_dict()
+        cache.set(key, user_profile)
+    return render_json(user_profile)
 
 
 def modify_profile(request):
