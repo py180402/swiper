@@ -7,7 +7,7 @@ cffi==1.11.5
 chardet==3.0.4
 colorama==0.4.1
 decorator==4.3.0
-Django==1.11.15
+Django==1.11.29
 django-redis==4.10.0
 dnspython==1.15.0
 eventlet==0.24.1
